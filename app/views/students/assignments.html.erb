@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<div id="fixfooter">
+<h1 align="center" style="color:red">Assignments</h1>
+<br>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<% amt1,amt2,amt3,amt4,amt5 = Assignment.first,Assignment.second,Assignment.third,Assignment.fourth,Assignment.fifth %>
+
+<div align="center" class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Hindi')">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hindi Assignments&nbsp;</button>
+  <button class="tablinks" onclick="openCity(event, 'English')">English Assignments&nbsp;</button>
+  <button class="tablinks" onclick="openCity(event, 'Maths')">Maths Assignments&nbsp;</button>
+  <button class="tablinks" onclick="openCity(event, 'Science')">Science Assignments&nbsp;</button>
+  <button class="tablinks" onclick="openCity(event, 'Social-Science')">&nbsp;Social-Science Assignments</button>
+</div>
+
+<div id="Hindi" class="tabcontent">
+  <br>
+  <h3 align="center">Hindi Assignments</h3><br><hr>
+    <h3><pre><%= amt1.hindi %></pre></h3><hr>
+    <br>
+</div>
+
+<div id="English" class="tabcontent">
+  <br>
+  <h3 align="center">English Assignments</h3><br><hr>
+    <h3><pre><%= amt1.english %></pre></h3><hr>
+</div>
+
+<div id="Maths" class="tabcontent">
+  <br>
+  <h3 align="center">Maths Assignments</h3><br><hr>
+    <h3><pre><%= amt1.maths %></pre></h3><hr>
+</div>
+
+<div id="Science" class="tabcontent">
+  <br>
+  <h3 align="center">Science Assignments</h3><br><hr>
+    <h3><pre><%= amt1.science %></pre></h3><hr>
+</div>
+
+<div id="Social-Science" class="tabcontent">
+  <br>
+  <h3 align="center">Social-Science Assignments</h3><br><hr>
+    <h3><pre><%= amt1.social_science %></pre></h3><br><hr>
+</div>
+</div>
+<br>
+<%= link_to 'Back', student_dashboard_path ,class:"btn btn-dark"%>
+<br><br>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 

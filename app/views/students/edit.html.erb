@@ -1,0 +1,12 @@
+<h1>Update Details</h1>
+<br>
+<%= render 'form', student: @student %>
+<br>
+
+<% if admin_signed_in? %>
+
+<%= link_to 'Show', @student ,class:"btn btn-secondary" %> |
+<%= link_to 'Back', students_path ,class:"btn btn-dark"  %>
+<% else %>
+<%= link_to 'Back', view_student_profile_path %>
+<% end %>

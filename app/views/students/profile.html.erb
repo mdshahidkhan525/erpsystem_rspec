@@ -1,0 +1,27 @@
+<h1 align="center">View-Profile</h1>
+
+<br>
+<div class="jumbotron">
+  <h1 style="margin-left:252px">
+    <%= $stu.first_name %>
+    <%= $stu.last_name %>
+  </h1>
+
+  <div style="width:250px; height:auto">
+      <%= image_tag($stu.studentimage,style:"padding-right:20px ;float:left;
+      width:100%;") %>
+  </div>
+  <p class="lead">
+    <h5><strong>Father name:</strong> <%= $stu.father_name %></h5><br>
+    <strong>Roll no:</strong> <%= $stu.roll_no %> |
+    <strong>Class:</strong><%= $stu.student_class %>
+  </p>
+
+  <hr class="my-4">
+    <p><strong>Email:</strong> <%= $stu.email_id %></p>
+    <p><strong>Mobile:</strong> <%= $stu.mobile %></p>
+
+  <%= link_to 'Update', edit_student_path($stu),class:"btn btn-secondary" %> |
+  <%= link_to 'Back', student_dashboard_path ,class:"btn btn-dark"%>
+  <br><br>
+</div>

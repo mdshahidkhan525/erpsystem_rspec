@@ -1,0 +1,20 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @faculty.first_name %>
+    <%= @faculty.last_name %>
+  </h1>
+  <p class="lead">
+    <strong>Email:</strong> <%= @faculty.email %> |
+    <strong>Mobile:</strong> <%= @faculty.mobile %>
+  </p>
+  <hr class="my-4">
+  <p><strong>Subject:</strong><%= @faculty.subject %></p>
+  <p><strong>Subject code:</strong><%= @faculty.subject_code %></p>
+  <%= link_to 'Edit', edit_faculty_path(@faculty),class:"btn btn-secondary" %> |
+  <% if admin_signed_in? %>
+  <%= link_to 'Back',faculties_path ,class:"btn btn-dark"%>
+  <% else %>
+  <%= link_to 'Back',faculty_dashboard_path,class:"btn btn-dark"%>
+  <% end %>
+</div>

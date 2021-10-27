@@ -1,0 +1,47 @@
+<% if $faculty.present? %>
+<div id="fixfooter">
+<br>
+<h1 align="center">
+	Student Details
+</h1>
+<br>
+<div style="background-color: #99CCFF;" >
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Roll No.</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Father Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Class</th>
+      <th scope="col">Mobile No.</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<br>
+    <tr>
+      <td><%= $studentdetails.roll_no %></td>
+      <td><%= $studentdetails.first_name %></td>
+      <td><%= $studentdetails.last_name %></td>
+      <td><%= $studentdetails.father_name %></td>
+      <td><%= $studentdetails.email_id %></td>
+      <td><%= $studentdetails.student_class %></td>
+      <td><%= $studentdetails.mobile %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<hr>
+<%= link_to 'Back',:back, class:'btn btn-dark'%>
+</div>
+<br><br><br>
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>

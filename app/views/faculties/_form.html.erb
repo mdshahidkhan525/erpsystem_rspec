@@ -1,0 +1,59 @@
+<%= form_with(model: @faculty) do |form| %>
+  <% if faculty.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(faculty.errors.count, "error") %> prohibited this faculty from being saved:</h2>
+
+      <ul>
+        <% faculty.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :last_name, class:"form-control",placeholder:"Last Name"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :email, class:"form-control",placeholder:"Email-Id"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :mobile, class:"form-control",placeholder:"Mobile No."%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :subject, class:"form-control",placeholder:"Subject" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :password, class:"form-control" ,placeholder:"Password"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :subject_code, class:"form-control" ,placeholder:"Subject Code"%>
+  </div>
+
+  <% if admin_signed_in? %>
+
+  <div class="field form-group">
+    <%= form.text_field :faculty_id, class:"form-control" ,placeholder:"Faculty Id"%>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit "Register",class:"btn btn-dark"%>
+  </div>
+
+  <% else %>
+    <div class="actions">
+      <%= form.submit "Update",class:"btn btn-dark"%>
+    </div>
+
+  <% end %>
+  
+<% end %>

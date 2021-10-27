@@ -1,0 +1,29 @@
+<% if $faculty.present? %>
+<div id="fixfooter">
+	<br>
+	<h1>Search Students Details</h1>
+	<br>
+	<%= form_with url:faculty_students_details_path do |form| %>
+
+		<div class="field form-group">
+		    <%= form.text_field :rollno, class:"form-control",placeholder:"Enter Roll No."%>
+		  </div>
+
+		<div class="actions">
+		    <%= form.submit "search",class:"btn btn-dark"%>
+		  </div>
+
+		  <br>
+		  <br>
+		  <%= link_to 'Back to Dashboard',faculty_dashboard_path %>
+	<%end%>
+</div>	
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>

@@ -1,0 +1,19 @@
+<% if admin_signed_in? %>
+
+<h1 align="center">Register Faculty</h1>
+<br>
+
+<%= render 'form', faculty: @faculty %>
+<br>
+<%= link_to 'Back', root_path ,class:"btn btn-secondary" %>
+<br><br><br><br>
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>
+

@@ -1,0 +1,18 @@
+<div id="fixfooter">
+<h1 align="center">Search Result</h1>
+<br>
+<%= form_with url:student_result_details_path do |form| %>
+
+	<div class="field form-group">
+	    <%= form.text_field :rollno, class:"form-control",placeholder:"Enter Roll No."%>
+	  </div>
+
+	<div class="actions">
+	    <%= form.submit "search",class:"btn btn-dark"%>
+	  </div>
+
+	  <br>
+	  <br>
+	  <%= link_to 'Back to Dashboard',student_dashboard_path %>
+<%end%>
+</div>

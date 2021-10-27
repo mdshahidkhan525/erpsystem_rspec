@@ -1,0 +1,45 @@
+<% if admin_signed_in? %>
+<div id="fixfooter">
+<div id="admindashboard" style="border-style:inset;margin-top:50px;padding-right:2px;padding-left:2px;padding-bottom:120px;">
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">
+					<%= link_to 'Register Student',new_student_path,style:"font-size:21px;color:#FFFFFF;text-decoration: none;"%>
+				</th>
+				<th scope="col">
+					<%= link_to 'Register Faculty',new_faculty_path,style:"font-size:21px;color:#FFFFFF;text-decoration: none;"%>
+				</th>
+				<th scope="col">
+					<%= link_to 'Faculties',faculties_path,style:"font-size:21px;color:#FFFFFF;text-decoration: none;"%>
+				</th>
+				<th scope="col">
+					<%= link_to 'Students',students_path,style: "font-size:21px;color:#FFFFFF;text-decoration: none;"  %>
+				</th>
+				<th scope="col">
+					<%= link_to 'Results',home_result_path ,style: "font-size:21px;color:#FFFFFF;text-decoration: none;" %>
+				</th>
+				<th scope="col">
+					<%= link_to 'Edit-Profile',edit_admin_registration_path ,style: "font-size:21px;color:#FFFFFF;text-decoration: none;" %>
+				</th>
+				<th scope="col">
+					<%= link_to 'Sign-out',destroy_admin_session_path,method: :delete, class:"navbar-brand",style: "font-size:21px;color:#FFFFFF;text-decoration:none;" %>
+				</th>
+			</tr>
+		</thead>
+	</table>
+
+	<br><br>
+	<h5 style="color: red;margin-left:40px;">Hello, <%= current_admin.name %></h5>
+	<h4 style="margin-left:40px">Wel-come in Admin Dashboard</h4>
+	<br>
+	<br><br><br><br><br><br>
+</div>
+</div>
+<% else %>
+<div id="homepage">
+			<br> <br><br><br>
+			<h1 id="heading">Welcome in ERP portal</h1>
+
+</div>
+<% end %>

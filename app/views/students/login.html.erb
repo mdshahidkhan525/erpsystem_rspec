@@ -1,0 +1,24 @@
+<div id="loginpage" style="border-style:inset; padding:35px; margin-top: 25px;">
+<h1 style="text-align:center;color:black;font-family:verdana;">Student Login</h1>
+
+<div align="center"><%= image_tag("logo/student.png",width:"180px",height:"180px")%></div>
+<%= form_with url:student_is_login_path do |form| %>
+  	
+  <div class="field form-group">
+    <%= form.label :email %><br />
+    <%= form.text_field :email, class:"form-control"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :password %><br />
+    <%= form.password_field :password, class:"form-control"%>
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= form.submit "Log-in",class:"btn btn-dark"%>
+  </div>
+</div>
+<br>
+<br>
+<%end%>

@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_roll: MyString
+  hindi: 1
+  english: 1
+  maths: 1
+  science: 1
+  social_science: 1
+  total: 1
+  obtained_marks: 1
+  remark: MyString
+  student: one
+
+two:
+  student_roll: MyString
+  hindi: 1
+  english: 1
+  maths: 1
+  science: 1
+  social_science: 1
+  total: 1
+  obtained_marks: 1
+  remark: MyString
+  student: two

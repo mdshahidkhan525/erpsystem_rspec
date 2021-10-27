@@ -1,0 +1,62 @@
+<% if $faculty.present? %>
+<div id="admindashboard" style="border-style:inset;margin-top:55px;padding-right:2px;padding-left:2px;padding-bottom:120px;">
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				</th>
+				<th scope="col">
+					<%= link_to 'View-Profile',view_profile_path,style:"font-size:21px;color:#FFFFFF;text-decoration: none;"%>
+				</th>
+				<th scope="col">
+					<%= link_to 'Search Students',search_student_path,style: "font-size:21px;color:#FFFFFF;text-decoration: none;"  %>
+				</th>
+				<th scope="col">
+					<%= link_to 'Show all',student_list_path ,style: "font-size:21px;color:#FFFFFF;text-decoration: none;" %>
+				</th>
+				<th scope="col">
+					<%= link_to 'Add Assignment',add_assignment_path ,style: "font-size:21px;color:#FFFFFF;text-decoration: none;" %>
+				</th>
+				<th scope="col">
+					<%= link_to 'Sign-out', faculty_signout_path ,style: "font-size:21px;color:#FFFFFF;text-decoration: none;" %>
+				</th>
+			</tr>
+		</thead>
+	</table>
+
+	<br><br>
+	<h5 style="color: red;margin-left:40px;">Hello, <%= $faculty.first_name %> <%= $faculty.last_name %></h5>
+	<h4 style="margin-left:40px;">Wel-come in Faculty Dashboard</h4>
+	<br>
+	<br>
+
+</div>
+	<!-- notice for remaining fees -->
+	<marquee width="100%" direction="left" height="100%" scrollamount="10" bgcolor="black">
+	  <h5 style="color:white;">
+	    Important Notice :
+	    We are organising the third Convention for Higher Education at University College on 13th september
+	  </h5>
+	</marquee>
+	<br><br><br><br><br>
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+

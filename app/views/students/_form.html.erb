@@ -1,0 +1,71 @@
+<%= form_with(model: @student ) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+        <% student.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name , class:"form-control", placeholder:"Last Name"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :father_name %>
+    <%= form.text_field :father_name, class:"form-control", placeholder:"Father Name" %>
+  </div>
+
+
+  <div class="field form-group">
+    <%= form.label :email_id %>
+    <%= form.text_field :email_id, class:"form-control", placeholder:"Email-Id" %>
+  </div>
+
+
+  <div class="field form-group">
+    <%= form.label :password %>
+    <%= form.text_field :password , class:"form-control", placeholder:"Password"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :mobile %>
+    <%= form.text_field :mobile , class:"form-control", placeholder:"Mobile"%>
+  </div>
+
+  <% if admin_signed_in? %>
+  <div class="field form-group">
+    <%= form.label :roll_no %>
+    <%= form.text_field :roll_no, class:"form-control", placeholder:"Roll No." %>
+  </div>
+  <div class="field form-group">
+    <%= form.label :student_class %>
+    <%= form.text_field :student_class, class:"form-control", placeholder:"Class" %>
+  </div>
+  
+  <div class="field form-group">
+    <%= form.label :student_image %>
+    <%= form.file_field :studentimage, class:"form-control" %>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= form.submit "Register",class:"btn btn-dark"%>
+  </div>
+  <% else %>
+    <div class="actions">
+      <%= form.submit "Update",class:"btn btn-dark"%>
+    </div>
+  <% end %>
+
+<% end %>

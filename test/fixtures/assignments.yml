@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'no': 1
+  hindi: MyText
+  english: MyText
+  maths: MyText
+  science: MyText
+  social_science: MyText
+
+two:
+  'no': 1
+  hindi: MyText
+  english: MyText
+  maths: MyText
+  science: MyText
+  social_science: MyText

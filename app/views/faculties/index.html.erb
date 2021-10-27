@@ -1,0 +1,51 @@
+<% if admin_signed_in? %>
+
+<h1 align="center">Faculties</h1><br>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Subject</th>
+        <th>Subject code</th>
+        <th>Password</th>
+        <th>Faculty Id</th>
+        <th>Actions</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @faculties.each do |faculty| %>
+        <tr id="faculty<%= faculty.id %>">
+          <td><%= faculty.first_name %></td>
+          <td><%= faculty.last_name %></td>
+          <td><%= faculty.email %></td>
+          <td><%= faculty.mobile %></td>
+          <td><%= faculty.subject %></td>
+          <td><%= faculty.subject_code %></td>
+          <td><%= faculty.password %></td>
+          <td><%= faculty.faculty_id%></td>
+          <td><%= link_to 'View', faculty %></td>
+          <td><%= link_to 'Update', edit_faculty_path(faculty) %></td>
+          <td><%= link_to 'Remove', faculty, method: :delete, data: { confirm: 'Are you sure?',remote:true} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <%= link_to 'Register New Faculty', new_faculty_path ,class:"btn btn-dark"%><br>
+  <br><br>
+  <%= link_to 'Back', root_path %>
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>

@@ -1,0 +1,62 @@
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @student.first_name %>
+    <%= @student.last_name %>
+  </h1>
+    <div style="width:200px; height:auto">
+      <%= image_tag(@student.studentimage,style:"padding-right:20px ;float:left;
+      width:100%;") %>
+    </div>
+  <p class="lead">
+    <h5><strong>Father name:</strong> <%= @student.father_name %></h5><br>
+    <strong>Roll no:</strong> <%= @student.roll_no %> |
+    <strong>Class:</strong><%= @student.student_class %>
+  </p>
+
+  <hr class="my-4">
+    <br>
+    <p><strong>Email:</strong> <%= @student.email_id %></p>
+    <p><strong>Mobile:</strong> <%= @student.mobile %></p>
+
+<% if admin_signed_in? && !$faculty.present? %>
+
+  <%= link_to 'Edit', edit_student_path(@student),class:"btn btn-secondary"%> |
+  <%= link_to 'Back', students_path ,class:"btn btn-dark"%>
+
+<% else %>
+
+  <% if $faculty.present? %>
+    <br><br>
+    <h2 align="center">Insert <%= $faculty.subject %> Marks</h2>
+    <br><br>    
+
+    <%=form_with url:result_marksinsert_path do |form| %>
+      <label>Choose Your Subject:</label>
+      <select name="subject">
+        <option value="hindi">Hindi</option>
+        <option value="english">English</option>
+        <option value="maths">Maths</option>
+        <option value="science">Science</option>
+        <option value="social_science">Social-Science</option>
+      </select>
+      <br>
+
+      <div class="field form-group">
+        <%= form.number_field :marks, class:"form-control",placeholder:"Enter Marks",maxlength:"2"%>
+      </div>
+      <div class="field form-group">
+
+        <%= form.hidden_field :s_id, value: @student.id %>
+      </div>
+      
+      <div class="actions">
+          <%= form.submit "Update-Marks",class:"btn btn-dark"%>
+      </div>
+    <%end%>
+  <% end %>
+<br>
+
+    <%= link_to 'Back',student_list_path ,class:"btn btn-dark"%> 
+
+<% end %>
+</div>

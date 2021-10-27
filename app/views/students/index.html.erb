@@ -1,0 +1,52 @@
+
+<% if admin_signed_in? %>
+<h1 align="center">Students</h1>
+<br>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Father name</th>
+      <th>Roll no</th>
+      <th>Email</th>
+      <th>Student class</th>
+      <th>Password</th>
+      <th>Mobile</th>
+      <th>Action</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr id="student<%= student.id %>">
+        <td><%= student.first_name %></td>
+        <td><%= student.last_name %></td>
+        <td><%= student.father_name %></td>
+        <td><%= student.roll_no %></td>
+        <td><%= student.email_id %></td>
+        <td><%= student.student_class %></td>
+        <td><%= student.password %></td>
+        <td><%= student.mobile %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?',remote:true } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+<br>
+
+<%= link_to 'Register Student', new_student_path ,class:"btn btn-dark" %><br>
+<br><br>
+<%= link_to 'Back', root_path %>
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>

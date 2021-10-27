@@ -1,0 +1,46 @@
+<% if $faculty.present? %>
+	<h1 align="center">Add Assignments</h1>
+	<br>
+	<br>
+	<%=form_with url:result_assign_path do |form| %>
+
+		<strong><label>Select Your Subject: </label></strong>
+		      <select name="subjects">
+		        <option value="hindi">Hindi</option>
+		        <option value="english">English</option>
+		        <option value="maths">Maths</option>
+		        <option value="science">Science</option>
+		        <option value="social_science">Social-Science</option>
+		      </select>&nbsp;&nbsp;
+
+		<strong><label>Select Assignment No.: </label></strong>
+		      <select name="a_num">
+		        <option value=1>01</option>
+		        <option value=2>02</option>
+		        <option value=3>03</option>
+		        <option value=4>04</option>
+		        <option value=5>05</option>
+		      </select>
+<br>
+		  </br>
+	      <div class="field form-group">
+	        <%= form.text_area :stu_assignments, class:"form-control",placeholder:"Enter Your Questions",rows:"10",cols:"80"%>
+	      </div>
+	      
+	      <div class="actions">
+	          <%= form.submit "Add Assignment",class:"btn btn-dark"%>
+	      </div>
+	    <%end%>
+	    <br>
+	<%= link_to 'Back to Dashboard',faculty_dashboard_path %>
+<br><br>
+
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>

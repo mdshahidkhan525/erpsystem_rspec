@@ -1,0 +1,51 @@
+<% if $stu.present? %>
+<div id="admindashboard" style="border-style:inset;margin-top:55px;padding-right:2px;padding-left:2px;padding-bottom:120px;">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      </th>
+      <th scope="col">
+        <%= link_to 'View-Profile',view_student_profile_path,style:"font-size:21px;color:yellow;text-decoration: none;"%>
+      </th>
+      <th scope="col">
+        <%= link_to 'Assignments',student_assignment_path,style: "font-size:21px;color:yellow;text-decoration: none;"  %>
+      </th>
+      <th scope="col">
+        <%= link_to 'Search Result',student_result_path,style: "font-size:21px;color:yellow;text-decoration: none;"  %>
+      </th>
+      <th>
+        <%= link_to 'Sign-out', student_signout_path ,style: "font-size:21px;color:yellow;text-decoration: none;" %>
+      </th>
+    </tr>
+  </thead>
+</table>
+<br>
+<div style="width:130px; height:auto;margin-left:20px">
+  <%= image_tag($stu.studentimage,style:"padding-right:20px ;float:left;
+      width:100%;") %>
+</div>
+<br>
+<h5 style="color: blue";>Hello, <%= $stu.first_name %> <%=$stu.last_name%></h5>
+<h4>Wel-come in Student Dashboard</h4>
+<br>
+<br>
+</div>
+<!-- notice for remaining fees -->
+<marquee width="100%" direction="left" height="100%" scrollamount="10" bgcolor="black">
+  <h5 style="color:yellow;">
+    Important Notice :
+    It is compulsory for all the students to pay the remaining fees before 15th July 
+  </h5>
+</marquee>
+<br><br><br><br><br>
+
+
+<% else %>
+<div id="homepage">
+      <br> <br><br><br>
+      <h1 id="heading">Welcome in ERP portal</h1>
+      <br><br>
+      <h1 style="margin-left:130px;color:red;">Error,404</h1>
+      <h2 style="margin-left:130px;color:red;">Page Not Found</h2>
+</div>
+<% end %>

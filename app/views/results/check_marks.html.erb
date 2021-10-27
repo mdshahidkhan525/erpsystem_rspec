@@ -1,0 +1,40 @@
+<div id="fixfooter">
+<h1 align="center">Incomplete Results Record's</h1>
+<br>
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th align="center">Roll No.</th>
+          <th align="center">Hindi</th>
+          <th align="center">English</th>
+          <th align="center">Maths</th>
+          <th align="center">Science</th>
+          <th align="center">Social Science</th>
+          <th align="center">Total Marks</th>
+          <th align="center">Obtained Marks</th>
+          <th align="center">Result</th>
+        </tr>
+      </thead>
+
+	  <tbody>
+        <% @empty_mark.each do |s| %>
+          <tr>
+            <td align="center"><%= s.student_roll%></td>
+            <td align="center"><%= s.hindi%></td>
+            <td align="center"><%= s.english%></td>
+            <td align="center"><%= s.maths%></td>
+            <td align="center"><%= s.science%></td>
+            <td align="center"><%= s.social_science%></td>
+            <td align="center"><%= s.total%></td>
+            <td align="center"><%= s.obtained_marks%></td>
+            <td align="center"><%= s.remark%></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+</div>
+<br>
+<%= link_to "Back" ,home_result_path %>
+<br><br>
+
+

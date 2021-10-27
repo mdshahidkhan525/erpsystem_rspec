@@ -1,0 +1,40 @@
+.button {
+  background-color: #1ab294;
+  border: none;
+  color:black;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: red;
+  color: white;
+}
+
+.forgetbutton{
+  color:black;
+  padding: 2px 5px;
+  font-size: 17px;
+}
+.forgetbutton:hover{
+  color:red;
+  text-decoration: none;
+}
+
+#loginpage{
+ background-image: url("background/appbg.jpg");
+ background-repeat: no-repeat;
+ width:80%;
+ position: center;
+ margin:auto;
+}
+
+#admindashboard{
+ background-image: url("background/dashboard.png");
+ background-repeat: no-repeat;
+ background-size:cover;
+}

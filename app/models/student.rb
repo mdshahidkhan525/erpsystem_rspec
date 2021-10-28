@@ -6,7 +6,7 @@ class Student < ApplicationRecord
 
 	validates :first_name, :last_name ,:father_name, :password, :email_id, :roll_no, :student_class,presence: true
 
-	 after_create :resultcreate, :rpcall
+	# after_create :resultcreate, :rpcall                               #uncomment this
 	#after student created result will be generate
 		def resultcreate
 			s = Student.last

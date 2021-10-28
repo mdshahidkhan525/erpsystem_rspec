@@ -11,7 +11,6 @@ class FacultiesController < ApplicationController
   end
   
   def login
-
   end
 
 

@@ -47,4 +47,12 @@ RSpec.describe '/faculties', type: :request do
       expect(response).to redirect_to(faculties_url)
     end
   end
+
+  describe 'GET /login' do
+    it 'renders a successful response' do
+      get faculty_login_url
+      expect(response).to be_successful
+    end
+  end
+  
 end
